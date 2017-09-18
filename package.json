@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
-    "webpack": "webpack -wd"
+    "webpack": "webpack -wd",
+    "test": "jest --watch"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
-    "eslint-plugin-react": "^7.3.0"
+    "eslint-plugin-react": "^7.3.0",
+    "jest": "^21.1.0"
   },
   "babel": {
     "presets": [
