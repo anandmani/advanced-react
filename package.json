@@ -11,7 +11,8 @@
   "devDependencies": {
     "babel-eslint": "^8.0.0",
     "eslint-plugin-react": "^7.3.0",
-    "jest": "^21.1.0"
+    "jest": "^21.1.0",
+    "react-test-renderer": "^15.6.1"
   },
   "babel": {
     "presets": [
