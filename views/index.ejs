@@ -3,10 +3,13 @@
 
 <head>
   <title>Advanced React</title>
+  <script>
+    window.initialData = <%- JSON.stringify(initialData) %>
+  </script>
 </head>
 
 <body>
-  <div id='root'><%- initalContent %></div>
+  <div id='root'><%- initialMarkup %></div>
   <script src="/bundle.js" charset="UTF-8"></script>
   </div>
 </body>
