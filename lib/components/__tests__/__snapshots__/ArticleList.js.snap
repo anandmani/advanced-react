@@ -9,7 +9,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div>
-    <Article
+    <ArticleContainer
       article={
         Object {
           "body": "body",
@@ -19,7 +19,7 @@ ShallowWrapper {
         }
       }
     />
-    <Article
+    <ArticleContainer
       article={
         Object {
           "body": "body",
@@ -32,7 +32,7 @@ ShallowWrapper {
   </div>,
   "nodes": Array [
     <div>
-      <Article
+      <ArticleContainer
         article={
           Object {
             "body": "body",
@@ -42,7 +42,7 @@ ShallowWrapper {
           }
         }
       />
-      <Article
+      <ArticleContainer
         article={
           Object {
             "body": "body",
@@ -121,7 +121,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
-          <Article
+          <ArticleContainer
             article={
               Object {
                 "body": "body",
@@ -131,7 +131,7 @@ ShallowWrapper {
               }
             }
           />
-          <Article
+          <ArticleContainer
             article={
               Object {
                 "body": "body",
@@ -144,7 +144,7 @@ ShallowWrapper {
         </div>,
         "_debugID": 2,
         "_renderedOutput": <div>
-          <Article
+          <ArticleContainer
             article={
               Object {
                 "body": "body",
@@ -154,7 +154,7 @@ ShallowWrapper {
               }
             }
           />
-          <Article
+          <ArticleContainer
             article={
               Object {
                 "body": "body",
