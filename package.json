@@ -7,7 +7,10 @@
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
     "test": "jest --watch",
-    "build-webpack": "webpack -p"
+    "build-webpack": "webpack -p",
+    "clean-build": "rm -rf build",
+    "build-node": "yarn clean-build && babel lib -d build --copy-files --ignore lib/__tests__",
+    "run-prod": "yarn build-webpack && NODE_PATH=./build pm2 start build/server.js"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -20,8 +23,13 @@
   "babel": {
     "presets": [
       "react",
-      "env",
+      [ "env", { "targets": { "node" : "current" } } ],
       "stage-2"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-es2015-parameters"
     ]
   },
   "dependencies": {
