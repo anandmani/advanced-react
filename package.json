@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "build-webpack": "webpack -p"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
