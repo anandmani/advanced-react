@@ -9,8 +9,10 @@
     "test": "jest --watch",
     "build-webpack": "webpack -p",
     "clean-build": "rm -rf build",
-    "build-node": "yarn clean-build && babel lib -d build --copy-files --ignore lib/__tests__",
-    "run-prod": "yarn build-webpack && yarn build-node && NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
+    "prebuild-node": "yarn clean-build",
+    "build-node": "babel lib -d build --copy-files --ignore lib/__tests__",
+    "prerun-prod": "npm-run-all --parallel build-webpack build-node",
+    "run-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -43,12 +45,12 @@
     "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2017": "^6.24.1",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "lodash.debounce": "^4.0.8",
@@ -56,6 +58,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "yarn-run-all": "^3.1.1"
   }
 }
