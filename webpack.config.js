@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 const config = {
   resolve: {
@@ -7,10 +8,23 @@ const config = {
       path.resolve('./node_modules')  //Adding the default value 
     ]
   },
-  entry: ['babel-polyfill', './lib/renderers/dom.js'],
+  // entry: ['babel-polyfill', './lib/renderers/dom.js'],
+  entry: {
+    vendor: [ //All the libraries we are importing from on our app code. Notice wehave left out babel-loader, babel-cli etc.
+      'react',
+      'react-dom',
+      'prop-types',
+      'axios',
+      'babel-polyfill'
+    ],
+    app: ['./lib/renderers/dom.js']
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }) //We optimise the chunk that is most re-used. We could optimise app instead but that's really not effective
+  ],
   output: {
     path: path.resolve(__dirname, 'public'),  //, not +
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
