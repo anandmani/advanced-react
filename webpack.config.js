@@ -11,11 +11,12 @@ const config = {
   // entry: ['babel-polyfill', './lib/renderers/dom.js'],
   entry: {
     vendor: [ //All the libraries we are importing from on our app code. Notice wehave left out babel-loader, babel-cli etc.
+      'babel-polyfill',
       'react',
       'react-dom',
       'prop-types',
       'axios',
-      'babel-polyfill'
+      'lodash.debounce'
     ],
     app: ['./lib/renderers/dom.js']
   },
@@ -28,7 +29,16 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'env', 'stage-2']
+          }
+        }
+      }
     ]
   }
 }
