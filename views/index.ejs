@@ -6,14 +6,23 @@
   <script>
     window.initialData = <%- JSON.stringify(initialData) %>
   </script>
+
 </head>
 
 <body>
-  <div id='root'><%- initialMarkup %></div>
-  <script src=<%- runtimeFile %> charset="UTF-8"></script>
-  <script src=<%- vendorFile %> charset="UTF-8"></script>
-  <script src=<%- appFile %> charset="UTF-8"></script>
+  <div id='root'>
+    <%- initialMarkup %>
   </div>
+  <script>
+    const scripts = <%- JSON.stringify(scripts) %>
+      function renderScripts(item) {
+        const head = document.getElementsByTagName('head')[0]
+        const script = document.createElement('script')
+        script.setAttribute('src', item)
+        head.appendChild(script)
+      }
+    scripts.forEach(renderScripts)
+  </script>
 </body>
 
 </html>
