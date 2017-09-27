@@ -7,7 +7,7 @@
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
     "webpack": "webpack -wd",
     "test": "jest --watch",
-    "build-webpack": "webpack -p",
+    "build-webpack": "NODE_ENV=production webpack -p",
     "clean-build": "rm -rf build",
     "prebuild-node": "yarn clean-build",
     "build-node": "babel lib -d build --copy-files --ignore lib/__tests__",
@@ -39,7 +39,6 @@
       "transform-class-properties",
       "transform-object-rest-spread",
       "transform-runtime"
-      
     ]
   },
   "dependencies": {
@@ -60,6 +59,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.6.0",
+    "webpack-manifest-plugin": "^1.3.2",
     "yarn-run-all": "^3.1.1"
   }
 }

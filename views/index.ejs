@@ -10,8 +10,9 @@
 
 <body>
   <div id='root'><%- initialMarkup %></div>
-  <script src="/vendor.js" charset="UTF-8"></script>
-  <script src="/app.js" charset="UTF-8"></script>
+  <script src=<%- runtimeFile %> charset="UTF-8"></script>
+  <script src=<%- vendorFile %> charset="UTF-8"></script>
+  <script src=<%- appFile %> charset="UTF-8"></script>
   </div>
 </body>
 
