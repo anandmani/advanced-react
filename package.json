@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
+    "prewebpack": "rm -rf public",
     "webpack": "webpack -wd",
     "test": "jest --watch",
+    "prebuild-webpack": "rm -rf public",
     "build-webpack": "NODE_ENV=production webpack -p",
     "clean-build": "rm -rf build",
     "prebuild-node": "yarn clean-build",
