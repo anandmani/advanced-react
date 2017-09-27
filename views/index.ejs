@@ -6,23 +6,26 @@
   <script>
     window.initialData = <%- JSON.stringify(initialData) %>
   </script>
-
 </head>
 
 <body>
-  <div id='root'>
-    <%- initialMarkup %>
-  </div>
+  <div id='root'><%- initialMarkup %></div>
   <script>
-    const scripts = <%- JSON.stringify(scripts) %>
-      function renderScripts(item) {
-        const head = document.getElementsByTagName('head')[0]
-        const script = document.createElement('script')
-        script.setAttribute('src', item)
-        head.appendChild(script)
-      }
-    scripts.forEach(renderScripts)
+    // const scripts = <%- JSON.stringify(scripts) %>
+    //   function renderScripts(item) {
+    //     const body = document.getElementsByTagName('body')[0]
+    //     const script = document.createElement('script')
+    //     script.setAttribute('src', item)
+    //     body.appendChild(script)
+    //     // setTimeout(() => body.appendChild(script), index*1000)
+    //   }
+    // scripts.forEach(renderScripts)
   </script>
+<script src='/runtime.b35e34fc9484ad3bf79b.js'></script>
+<script src='/app.450a34eb6630af9048a3.js'></script>
+<script src='/vendor.20d45508150361331109.js'></script>
+
+
 </body>
 
 </html>
